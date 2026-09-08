@@ -699,7 +699,7 @@ a {
     display: block;
 }
 
-.contact-form input,
+contact-form input,
 .contact-form textarea,
 .contact-form-box input,
 .contact-form-box textarea {
@@ -742,7 +742,7 @@ a {
     transition: 0.3s ease;
 }
 
-.contact-form button:hover,
+contact-form button:hover,
 .contact-form-box button:hover {
     background: #14532d;
     transform: translateY(-2px);
@@ -758,16 +758,11 @@ a {
     .contact-container{
         grid-template-columns: 1fr;
         gap: 25px;
-        justify-items: center; /* center children so cards don't stretch full width */
     }
     .contact-info, 
     .contact-form,
     .contact-form-box{
         padding: 25px 20px;
-        width: 100%;        /* allow width control by max-width below */
-        max-width: 720px;   /* constrain cards so they appear "smaller" on phones */
-        margin: 0 auto;
-        box-sizing: border-box;
     }
     .contact-info h2,
     .contact-form h2,
@@ -799,17 +794,6 @@ a {
     .section-heading h2{
         font-size: 30px;
 
-    }
-}
-
-/* On very small phones, tighten the card width a bit more */
-@media (max-width: 420px) {
-    .contact-info,
-    .contact-form,
-    .contact-form-box {
-        max-width: 360px;
-        padding-left: 16px;
-        padding-right: 16px;
     }
 }
 
