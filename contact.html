@@ -9,6 +9,9 @@
 
     <title>Contact Us | NATIUS Business Services</title>
 
+    <meta name="description" content="Contact NATIUS Business Services — passport, birth certificates, online registration, graphic design and more.">
+    <link rel="icon" href="images/favicon.ico">
+
     <link rel="stylesheet" href="forms.css">
 
 </head>
@@ -29,7 +32,7 @@
         </a>
 
 
-        <button class="menu-toggle" id="menuToggle" aria-expanded="false">
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">
             ☰
         </button>
 
@@ -42,7 +45,7 @@
 
             <a href="index.html#about">About</a>
 
-            <a href="contact.html" class="active">Contact</a>
+            <a href="contact.html" class="active" aria-current="page">Contact</a>
 
         </nav>
 
@@ -103,8 +106,7 @@
                     </p>
                     <p>
                         <strong>Location</strong>
-                        Tema Community 2,
-                        | UCC
+                        Tema Community 2, UCC
                     </p>
                 </div>
 
@@ -200,7 +202,7 @@
                         name="service"
                     >
 
-                        <option value="">
+                        <option value="" disabled selected hidden>
                             Select a service
                         </option>
 
@@ -269,6 +271,9 @@
 
         </div>
 
+        </section> <!-- close section.contact -->
+       </main>
+
     </div>
 
 </section>
@@ -294,29 +299,29 @@
 
 
 <script>
+/* Guarded accessible menu toggle */
+(function () {
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+  if (!menuToggle || !mainNav) return;
 
-menuToggle.addEventListener("click", function() {
+  // ensure aria-controls is present (already in markup, but keep as a safety)
+  menuToggle.setAttribute('aria-controls', 'mainNav');
 
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!expanded));
-    mainNav.classList.toggle("active");
+  menuToggle.addEventListener("click", function() {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!expanded));
+      mainNav.classList.toggle("active");
+  });
 
-});
-
-document.querySelectorAll(".nav a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        mainNav.classList.remove("active");
-        menuToggle.setAttribute('aria-expanded', 'false');
-
-    });
-
-});
-
+  document.querySelectorAll(".nav a").forEach(function(link) {
+      link.addEventListener("click", function() {
+          mainNav.classList.remove("active");
+          menuToggle.setAttribute('aria-expanded', 'false');
+      });
+  });
+})();
 </script>
 
 </body>
