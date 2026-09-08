@@ -251,15 +251,6 @@ a {
 }
 
 
-/* Ensure .btn-primary applies inside contact forms (override potential form-specific rules) */
-.contact-form-box .btn-primary,
-.contact-form .btn-primary {
-    background: #075b32;
-    color: #ffffff;
-    border-color: #075b32;
-}
-
-
 /* OUTLINE BUTTON */
 
 .btn-outline {
@@ -440,6 +431,7 @@ a {
     background: #ffffff;
 }
 
+
 .why-grid {
     display: grid;
 
@@ -447,6 +439,7 @@ a {
 
     gap: 25px;
 }
+
 
 .why-card {
     text-align: center;
@@ -459,6 +452,7 @@ a {
 
     transition: 0.3s;
 }
+
 .why-card:hover {
     border-color: #075b32;
 
@@ -512,6 +506,7 @@ a {
     background: #f6f8f7;
 }
 
+
 .about-grid {
     display: grid;
 
@@ -521,6 +516,7 @@ a {
 
     gap: 60px;
 }
+
 
 .about-image img {
     width: 100%;
@@ -577,6 +573,7 @@ a {
     background-position: center;
 }
 
+
 .page-hero p {
     font-size: 14px;
 
@@ -587,11 +584,13 @@ a {
     margin-bottom: 8px;
 }
 
+
 .page-hero h1 {
     font-size: 45px;
 
     margin-bottom: 12px;
 }
+
 
 .page-hero span {
     font-size: 17px;
@@ -608,6 +607,7 @@ a {
     padding: 90px 0;
 }
 
+
 .contact-grid {
     display: grid;
 
@@ -621,191 +621,42 @@ a {
 
 /* CONTACT INFORMATION */
 
-.contact{
-    max-width: 1150px;
-    margin: 60px auto;
-    padding: 20px;
-}
-.contact h2{
-    text-align: center;
-    color: #166534;
-    font-size: 36px;
-    margin-bottom: 10px;
+.contact-info h2 {
+    margin-bottom: 20px;
 }
 
-.contact p{
-    text-align: center;
-    margin-bottom: 40px;
+
+.contact-info > p {
+    color: #666;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
 }
 
-.contact-container{
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 45px;
-    align-items: start;
-}
 
-.contact-info{
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-    border-left: 5px solid #166534;
-}
-.contact-info h2{
-    color: #166534;
-    font-size: 28px;
+.contact-item {
     margin-bottom: 25px;
+
+    padding-left: 18px;
+
+    border-left: 4px solid #075b32;
 }
-.contact-info p{
-    text-align: left;
-    margin-bottom: 18px;
-    color: #444;
-    line-height: 1.6;
-    padding: 12px 15px;
-    background: #f7faf8;
-    border-radius: 8px;
-    border: 1px solid #e5eee8;
+
+
+.contact-item h3 {
+    color: #075b32;
+
+    margin-bottom: 5px;
 }
-.contact-info strong{
-    display: block;
-    color: #166534;
+
+
+.contact-item p {
+    color: #666;
+
     font-size: 15px;
-    margin-bottom: 3px;
 }
 
-/* Ensure .contact-form-box uses the same visual styles as the original .contact-form rules */
-.contact-form,
-.contact-form-box {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.10);
-    border-top: 5px solid #166534;
-}
-
-.contact-form form,
-.contact-form-box form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact-form label,
-.contact-form-box label {
-    color: #333;
-    font-weight: 600;
-    margin-top: 5px;
-    display: block;
-}
-
-contact-form input,
-.contact-form textarea,
-.contact-form-box input,
-.contact-form-box textarea {
-    width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 18px;
-    border: 1px solid #d5ddd8;
-    border-radius: 8px;
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: 15px;
-    outline: none;
-    transition: 0.3s ease;
-}
-
-.contact-form textarea,
-.contact-form-box textarea {
-    min-height: 140px;
-    resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form-box input:focus,
-.contact-form-box textarea:focus {
-    border-color: #166534;
-    box-shadow:0 0 0 3px rgba(22,101,52,0.10);
-}
-
-.contact-form button,
-.contact-form-box button {
-    margin-top: 10px;
-    padding: 13px 20px;
-    background: #166534;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-contact-form button:hover,
-.contact-form-box button:hover {
-    background: #14532d;
-    transform: translateY(-2px);
-}
-
-@media (max-width:768px) {
-    .contact{
-        padding: 30px 15px;
-    }
-    .contact h2{
-        font-size: 30px;
-    }
-    .contact-container{
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    .contact-info, 
-    .contact-form,
-    .contact-form-box{
-        padding: 25px 20px;
-    }
-    .contact-info h2,
-    .contact-form h2,
-    .contact-form-box h2 {
-        font-size: 24px;
-    }
-
-    /* Increased contact info readability on small screens */
-    .contact-info p {
-        font-size: 16px;         /* larger and more readable on phones */
-        line-height: 1.8;        /* more spacing between lines */
-        padding: 14px 16px;      /* more breathing room */
-    }
-
-    .contact-info h2 {
-        font-size: 26px;         /* slightly larger info heading */
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form-box input,
-    .contact-form-box textarea {
-        font-size: 14px;
-    }
-
-    .services-preview{
-        margin: 40px auto;
-    }
-    .section-heading h2{
-        font-size: 30px;
-
-    }
-}
-
-/* link styles inside contact-info */
-.contact-info p a{
-    color: #111;
-    text-decoration: none;
-}
-.contact-info p a:hover{
-    color: #16803c;
-    text-decoration: underline;
-}
 
 /* CONTACT FORM BOX */
 
@@ -818,6 +669,7 @@ contact-form button:hover,
 
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.09);
 }
+
 
 .contact-form-box h2 {
     color: #075b32;
@@ -1031,6 +883,7 @@ contact-form button:hover,
    ===================================================== */
 
 @media (max-width: 1000px) {
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1039,70 +892,257 @@ contact-form button:hover,
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .hero h1 {
+        font-size: 48px;
     }
+
+    .about-grid {
+        gap: 35px;
+    }
+
 }
 
+
 /* =====================================================
-   Responsive Navigation & Utilities (for mobile menu and honeypot)
+   MOBILE
    ===================================================== */
 
 @media (max-width: 768px) {
-    /* show the menu toggle */
+
+    /* HEADER */
+
+    .header,
+    .nav-container {
+        height: 72px;
+    }
+
+
+    .logo img {
+        width: 145px;
+    }
+
+
+    /* MOBILE MENU BUTTON */
+
     .menu-toggle {
         display: block;
     }
 
-    /* hide nav by default (JS toggles .active) */
+
+    /* MOBILE NAVIGATION */
+
     .nav {
-        display: none;
         position: absolute;
-        top: 82px;
-        right: 15px;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+
         background: #ffffff;
+
+        display: none;
+
         flex-direction: column;
+
+        align-items: stretch;
+
         gap: 0;
-        padding: 18px;
-        width: calc(100% - 30px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        border-radius: 8px;
-        z-index: 9998;
+
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
     }
+
 
     .nav.active {
         display: flex;
     }
 
+
     .nav a {
-        padding: 10px 0;
-        border-bottom: 1px solid #eef6f2;
+        padding: 15px 25px;
+
+        border-bottom: 1px solid #eeeeee;
     }
 
-    .nav a:last-child {
-        border-bottom: none;
+
+    .nav a:hover {
+        background: #f1f7f3;
     }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 650px;
+    }
+
+
+    .hero-content {
+        padding-top: 70px;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+
+    .hero-content > p:not(.hero-small) {
+        font-size: 16px;
+    }
+
+
+    /* SECTIONS */
+
+    .intro,
+    .services-preview,
+    .all-services,
+    .why-us,
+    .about,
+    .contact-section {
+        padding: 65px 0;
+    }
+
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-info h2 {
+        font-size: 30px;
+    }
+
+
+    /* SERVICES */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* WHY */
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ABOUT */
+
+    .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    /* PAGE HERO */
+
+    .page-hero {
+        padding: 125px 20px 65px;
+    }
+
+
+    .page-hero h1 {
+        font-size: 38px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .contact-form-box {
+        padding: 25px 20px;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 65px 20px;
+    }
+
+
+    .cta h2 {
+        font-size: 30px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
 }
 
-/* Utility: hide elements visually but keep them accessible if needed
-   (useful for honeypot inputs; you can also keep inline style if you prefer) */
-.hidden {
-    position: absolute !important;
-    left: -9999px !important;
-    width: 1px !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    clip: rect(0 0 0 0) !important;
-    white-space: nowrap !important;
-}
 
-/* Ensure .contact-info p links look correct (redeclared to keep specificity) */
-.contact-info p a{
-    color: #111;
-    text-decoration: none;
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 92%;
+    }
+
+
+    .hero {
+        min-height: 620px;
+    }
+
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+
+    .hero-small {
+        font-size: 12px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-info h2 {
+        font-size: 27px;
+    }
+
+
+    .page-hero h1 {
+        font-size: 33px;
+    }
+
+
+    .service-card img {
+        height: 220px;
+    }
+
+
+    .contact-form-box {
+        padding: 22px 16px;
+    }
+
 }
-.contact-info p a:hover{
-    color: #16803c;
-    text-decoration: underline;
+.nav.active{
+    color: #168053;
 }
