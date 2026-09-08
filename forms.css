@@ -431,7 +431,6 @@ a {
     background: #ffffff;
 }
 
-
 .why-grid {
     display: grid;
 
@@ -439,7 +438,6 @@ a {
 
     gap: 25px;
 }
-
 
 .why-card {
     text-align: center;
@@ -452,7 +450,6 @@ a {
 
     transition: 0.3s;
 }
-
 .why-card:hover {
     border-color: #075b32;
 
@@ -506,7 +503,6 @@ a {
     background: #f6f8f7;
 }
 
-
 .about-grid {
     display: grid;
 
@@ -516,7 +512,6 @@ a {
 
     gap: 60px;
 }
-
 
 .about-image img {
     width: 100%;
@@ -573,7 +568,6 @@ a {
     background-position: center;
 }
 
-
 .page-hero p {
     font-size: 14px;
 
@@ -584,13 +578,11 @@ a {
     margin-bottom: 8px;
 }
 
-
 .page-hero h1 {
     font-size: 45px;
 
     margin-bottom: 12px;
 }
-
 
 .page-hero span {
     font-size: 17px;
@@ -606,7 +598,6 @@ a {
 .contact-section {
     padding: 90px 0;
 }
-
 
 .contact-grid {
     display: grid;
@@ -626,7 +617,7 @@ a {
     margin: 60px auto;
     padding: 20px;
 }
-.contact h1{
+.contact h2{
     text-align: center;
     color: #166534;
     font-size: 36px;
@@ -673,26 +664,36 @@ a {
     font-size: 15px;
     margin-bottom: 3px;
 }
-.contact-form{
+
+/* Ensure .contact-form-box uses the same visual styles as the original .contact-form rules */
+.contact-form,
+.contact-form-box {
     background: #ffffff;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.10);
     border-top: 5px solid #166534;
 }
-.contact-form form{
+
+.contact-form form,
+.contact-form-box form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-
 }
-.contact-form label{
+
+.contact-form label,
+.contact-form-box label {
     color: #333;
     font-weight: 600;
     margin-top: 5px;
+    display: block;
 }
-.contact-form input, 
-.contact-form textarea{
+
+.contact-form input,
+.contact-form textarea,
+.contact-form-box input,
+.contact-form-box textarea {
     width: 100%;
     padding: 12px 15px;
     margin-bottom: 18px;
@@ -704,16 +705,23 @@ a {
     outline: none;
     transition: 0.3s ease;
 }
-.contact-form textarea{
+
+.contact-form textarea,
+.contact-form-box textarea {
     min-height: 140px;
     resize: vertical;
 }
+
 .contact-form input:focus,
-.contact-form textarea:focus{
+.contact-form textarea:focus,
+.contact-form-box input:focus,
+.contact-form-box textarea:focus {
     border-color: #166534;
-    box-shadow:0 0 0 3px rgba(22,101,52,0.10) ;
+    box-shadow:0 0 0 3px rgba(22,101,52,0.10);
 }
-.contact-form button{
+
+.contact-form button,
+.contact-form-box button {
     margin-top: 10px;
     padding: 13px 20px;
     background: #166534;
@@ -725,7 +733,8 @@ a {
     transition: 0.3s ease;
 }
 
-.contact-form button:hover{
+.contact-form button:hover,
+.contact-form-box button:hover {
     background: #14532d;
     transform: translateY(-2px);
 }
@@ -734,7 +743,7 @@ a {
     .contact{
         padding: 30px 15px;
     }
-    .contact h1{
+    .contact h2{
         font-size: 30px;
     }
     .contact-container{
@@ -742,18 +751,22 @@ a {
         gap: 25px;
     }
     .contact-info, 
-    .contact-form{
+    .contact-form,
+    .contact-form-box{
         padding: 25px 20px;
     }
-    .contact-info h2
-    .contact-form h2{
+    .contact-info h2,
+    .contact-form h2,
+    .contact-form-box h2 {
         font-size: 24px;
     }
     .contact-info p{
         font-size: 14px;
     }
-    .contact-form input
-    .contact-form textarea{
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form-box input,
+    .contact-form-box textarea {
         font-size: 14px;
     }
 
@@ -765,6 +778,8 @@ a {
 
     }
 }
+
+/* link styles inside contact-info */
 .contact-info p a{
     color: #111;
     text-decoration: none;
@@ -773,6 +788,7 @@ a {
     color: #16803c;
     text-decoration: underline;
 }
+
 /* CONTACT FORM BOX */
 
 .contact-form-box {
@@ -784,7 +800,6 @@ a {
 
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.09);
 }
-
 
 .contact-form-box h2 {
     color: #075b32;
@@ -998,7 +1013,6 @@ a {
    ===================================================== */
 
 @media (max-width: 1000px) {
-
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1007,257 +1021,70 @@ a {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero h1 {
-        font-size: 48px;
-    }
-
     .about-grid {
-        gap: 35px;
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
-
 }
 
-
 /* =====================================================
-   MOBILE
+   Responsive Navigation & Utilities (for mobile menu and honeypot)
    ===================================================== */
 
 @media (max-width: 768px) {
-
-    /* HEADER */
-
-    .header,
-    .nav-container {
-        height: 72px;
-    }
-
-
-    .logo img {
-        width: 145px;
-    }
-
-
-    /* MOBILE MENU BUTTON */
-
+    /* show the menu toggle */
     .menu-toggle {
         display: block;
     }
 
-
-    /* MOBILE NAVIGATION */
-
+    /* hide nav by default (JS toggles .active) */
     .nav {
-        position: absolute;
-
-        top: 72px;
-        left: 0;
-
-        width: 100%;
-
-        background: #ffffff;
-
         display: none;
-
+        position: absolute;
+        top: 82px;
+        right: 15px;
+        background: #ffffff;
         flex-direction: column;
-
-        align-items: stretch;
-
         gap: 0;
-
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        padding: 18px;
+        width: calc(100% - 30px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        border-radius: 8px;
+        z-index: 9998;
     }
-
 
     .nav.active {
         display: flex;
     }
 
-
     .nav a {
-        padding: 15px 25px;
-
-        border-bottom: 1px solid #eeeeee;
+        padding: 10px 0;
+        border-bottom: 1px solid #eef6f2;
     }
 
-
-    .nav a:hover {
-        background: #f1f7f3;
+    .nav a:last-child {
+        border-bottom: none;
     }
-
-
-    /* HERO */
-
-    .hero {
-        min-height: 650px;
-    }
-
-
-    .hero-content {
-        padding-top: 70px;
-    }
-
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-
-    .hero-content > p:not(.hero-small) {
-        font-size: 16px;
-    }
-
-
-    /* SECTIONS */
-
-    .intro,
-    .services-preview,
-    .all-services,
-    .why-us,
-    .about,
-    .contact-section {
-        padding: 65px 0;
-    }
-
-
-    .section-heading h2,
-    .about-content h2,
-    .contact-info h2 {
-        font-size: 30px;
-    }
-
-
-    /* SERVICES */
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* WHY */
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* ABOUT */
-
-    .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-
-    /* PAGE HERO */
-
-    .page-hero {
-        padding: 125px 20px 65px;
-    }
-
-
-    .page-hero h1 {
-        font-size: 38px;
-    }
-
-
-    /* CONTACT */
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-
-    .contact-form-box {
-        padding: 25px 20px;
-    }
-
-
-    /* CTA */
-
-    .cta {
-        padding: 65px 20px;
-    }
-
-
-    .cta h2 {
-        font-size: 30px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-content {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
 }
 
-
-/* =====================================================
-   SMALL PHONES
-   ===================================================== */
-
-@media (max-width: 480px) {
-
-    .container {
-        width: 92%;
-    }
-
-
-    .hero {
-        min-height: 620px;
-    }
-
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-
-    .hero-small {
-        font-size: 12px;
-    }
-
-
-    .hero-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-
-    .hero-buttons .btn {
-        text-align: center;
-    }
-
-
-    .section-heading h2,
-    .about-content h2,
-    .contact-info h2 {
-        font-size: 27px;
-    }
-
-
-    .page-hero h1 {
-        font-size: 33px;
-    }
-
-
-    .service-card img {
-        height: 220px;
-    }
-
-
-    .contact-form-box {
-        padding: 22px 16px;
-    }
-
+/* Utility: hide elements visually but keep them accessible if needed
+   (useful for honeypot inputs; you can also keep inline style if you prefer) */
+.hidden {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
 }
-.nav.active{
-    color: #168053;
+
+/* Ensure .contact-info p links look correct (redeclared to keep specificity) */
+.contact-info p a{
+    color: #111;
+    text-decoration: none;
+}
+.contact-info p a:hover{
+    color: #16803c;
+    text-decoration: underline;
 }
