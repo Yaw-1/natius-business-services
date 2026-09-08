@@ -29,7 +29,7 @@
         </a>
 
 
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false">
             ☰
         </button>
 
@@ -112,7 +112,7 @@
             <div class="contact-item">
 
                 <h3>🕒 Business Hours</h3>
-                Monday - Saturday
+                <p class="business-period">Monday - Saturday</p>
                 <p>8:30am - 10:00pm</p>
 
                 <p>
@@ -165,7 +165,7 @@
                     <input
                         type="email"
                         id="email"
-                        name="email"
+                        name="_replyto"
                         placeholder="Enter your email"
                         required
                     >
@@ -300,6 +300,8 @@ const mainNav = document.getElementById("mainNav");
 
 menuToggle.addEventListener("click", function() {
 
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
     mainNav.classList.toggle("active");
 
 });
@@ -309,6 +311,7 @@ document.querySelectorAll(".nav a").forEach(function(link) {
     link.addEventListener("click", function() {
 
         mainNav.classList.remove("active");
+        menuToggle.setAttribute('aria-expanded', 'false');
 
     });
 
