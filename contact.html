@@ -9,9 +9,6 @@
 
     <title>Contact Us | NATIUS Business Services</title>
 
-    <meta name="description" content="Contact NATIUS Business Services — passport, birth certificates, online registration, graphic design and more.">
-    <link rel="icon" href="images/favicon.ico">
-
     <link rel="stylesheet" href="forms.css">
 
 </head>
@@ -32,7 +29,7 @@
         </a>
 
 
-        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">
+        <button class="menu-toggle" id="menuToggle">
             ☰
         </button>
 
@@ -45,7 +42,7 @@
 
             <a href="index.html#about">About</a>
 
-            <a href="contact.html" class="active" aria-current="page">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
 
         </nav>
 
@@ -80,42 +77,51 @@
 
 
         <!-- CONTACT INFORMATION -->
-       <main>
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>Have a question or need our services? Get in touch with NATIUS Business Services.</p>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>
-                        <strong>Business</strong>
-                        NATIUS Business Services
-                    </p>
-                    <p>
-                        <strong>WhatsApp</strong>
-                        <a href="https://wa.me/233547500825" target="_blank" rel="noopener noreferrer">+233 54 750 0825</a>
-                    </p>
-                    <p>
-                        <strong>Call</strong>
-                        <a href="tel:+233530387952">+233 53 038 7952</a>
-                    </p>
-                    <p>
-                        <strong>Email</strong>
-                        <a href="mailto:natiusbusiness181@gmail.com">natiusbusiness181@gmail.com</a>
-                    </p>
-                    <p>
-                        <strong>Location</strong>
-                        Tema Community 2, UCC
-                    </p>
-                </div>
+        <div class="contact-info">
+
+            <p class="section-label">
+                CONTACT NATIUS
+            </p>
+
+            <h2>
+                How Can We Help You?
+            </h2>
+
+            <p>
+                Send us a message using the form and we will
+                get back to you as soon as possible.
+            </p>
+
+
+            <div class="contact-item">
+
+                <h3>📱 WhatsApp</h3>
+                <p>0547500825</p>
+
+                <p>
+                    Contact us directly on WhatsApp for quick
+                    enquiries.
+                </p>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <h3>✉️ Email</h3>
+                <p>natiusbusiness181@gmail.com</p>
+                <p>
+                    Send us your enquiry through the contact form.
+                </p>
+
+            </div>
 
 
             <div class="contact-item">
 
                 <h3>🕒 Business Hours</h3>
-                <p class="business-period">Monday - Saturday</p>
-                <p>8:30am - 10:00pm</p>
+                Morning - Evening
+                <p>6:30am - 11:30pm</p>
 
                 <p>
                     We are available to assist with your
@@ -140,8 +146,6 @@
                 method="POST"
             >
 
-                <!-- Honeypot for basic spam protection -->
-                <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1">
 
                 <div class="form-group">
 
@@ -154,7 +158,6 @@
                         id="name"
                         name="name"
                         placeholder="Enter your full name"
-                        autocomplete="name"
                         required
                     >
 
@@ -170,9 +173,8 @@
                     <input
                         type="email"
                         id="email"
-                        name="_replyto"
+                        name="email"
                         placeholder="Enter your email"
-                        autocomplete="email"
                         required
                     >
 
@@ -190,7 +192,6 @@
                         id="phone"
                         name="phone"
                         placeholder="Enter your phone number"
-                        autocomplete="tel"
                     >
 
                 </div>
@@ -205,11 +206,9 @@
                     <select
                         id="service"
                         name="service"
-                        aria-label="Service Needed"
-                        required
                     >
 
-                        <option value="" disabled selected>
+                        <option value="">
                             Select a service
                         </option>
 
@@ -278,9 +277,6 @@
 
         </div>
 
-        </section> <!-- close section.contact -->
-       </main>
-
     </div>
 
 </section>
@@ -306,29 +302,26 @@
 
 
 <script>
-/* Guarded accessible menu toggle */
-(function () {
-  const menuToggle = document.getElementById("menuToggle");
-  const mainNav = document.getElementById("mainNav");
 
-  if (!menuToggle || !mainNav) return;
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
-  // ensure aria-controls is present (already in markup, but keep as a safety)
-  menuToggle.setAttribute('aria-controls', 'mainNav');
+menuToggle.addEventListener("click", function() {
 
-  menuToggle.addEventListener("click", function() {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-      menuToggle.setAttribute('aria-expanded', String(!expanded));
-      mainNav.classList.toggle("active");
-  });
+    mainNav.classList.toggle("active");
 
-  document.querySelectorAll(".nav a").forEach(function(link) {
-      link.addEventListener("click", function() {
-          mainNav.classList.remove("active");
-          menuToggle.setAttribute('aria-expanded', 'false');
-      });
-  });
-})();
+});
+
+document.querySelectorAll(".nav a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        mainNav.classList.remove("active");
+
+    });
+
+});
+
 </script>
 
 </body>
